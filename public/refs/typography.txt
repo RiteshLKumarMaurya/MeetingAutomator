@@ -1,0 +1,96 @@
+For **Meeting Automator**, I’d lock the typography like this:
+
+### Primary typeface
+
+**Inter**
+
+* Clean, modern, highly readable
+* Excellent for SaaS dashboards and landing pages
+* Strong international feel
+* Works well across desktop and mobile
+
+### Display / Hero
+
+**Inter — 700 / 800**
+
+Use for:
+
+* Hero headings
+* Section headings
+* Pricing headings
+* Major CTAs
+
+### Body
+
+**Inter — 400 / 500**
+
+Use for:
+
+* Paragraphs
+* Feature descriptions
+* Navigation
+* Forms
+* Booking UI
+
+### Labels / Metadata
+
+**Inter — 500 / 600**
+
+Use for:
+
+* Badges
+* Small labels
+* Status
+* Buttons
+* Navigation items
+
+---
+
+## Final type scale
+
+```text
+Hero        56–72px   700/800
+H1          44–56px   700
+H2          32–40px   700
+H3          24–28px   600/700
+Body        16–18px   400
+Small       14px      400/500
+Caption     12–13px   500
+```
+
+### Logo
+
+Keep the **logo lettering as part of the logo asset**, not live text. That ensures the brand mark always looks identical.
+
+---
+
+## Recommended font setup
+
+For Next.js, use `next/font/google`:
+
+```tsx
+import { Inter } from "next/font/google";
+
+export const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+```
+
+Then:
+
+```css
+:root {
+  --font-sans: var(--font-inter);
+}
+```
+
+### Final decision
+
+**Font family:** Inter
+**Primary weight:** 400
+**UI weight:** 500–600
+**Headings:** 700–800
+
+This is the typography system I'd use consistently across the **Meeting Automator website, dashboard, booking flow, emails and PDF**.

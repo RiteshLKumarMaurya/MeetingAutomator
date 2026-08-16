@@ -1,0 +1,11 @@
+git add deploy.sh
+git commit -m "Add production deployment script"
+git push origin main
+
+
+
+cd /opt/meetingautomator
+git pull origin main
+chmod +x deploy.sh
+./deploy.sh
+
