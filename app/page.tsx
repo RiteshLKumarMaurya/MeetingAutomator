@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SectionLabel } from "@/components/SectionLabel";
 import { DemoVideo } from "@/components/DemoVideo";
 import { HeroFlowCard } from "@/components/HeroFlowCard";
+import { WorkflowDownload } from "@/components/WorkflowDownload";
 
 const meetingImage = "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=85";
 
@@ -38,6 +39,12 @@ export default function HomePage() {
         <div><strong>Still doing this manually?</strong><span>DM → ask for availability → check calendar → confirm → send link → handle reschedules.</span></div>
         <Link className="text-link" href="/consultation">Replace the process →</Link>
       </div>
+
+      <section className="section section-workflow-download">
+        <div className="container">
+          <WorkflowDownload variant="banner" />
+        </div>
+      </section>
 
       <section className="section">
         <div className="container">

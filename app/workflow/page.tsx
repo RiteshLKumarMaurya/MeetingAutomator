@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SectionLabel } from "@/components/SectionLabel";
+import { WorkflowDownload } from "@/components/WorkflowDownload";
 
 const steps = [
   ["01", "A prospect wants to talk", "They arrive from your website, campaign, referral or sales conversation."],
@@ -18,6 +19,12 @@ export default function WorkflowPage() {
           <SectionLabel>How the system works</SectionLabel>
           <h1 className="h1" style={{ marginTop: 18 }}>From “can we have a call?” to a managed meeting — without the back-and-forth.</h1>
           <p>Meeting Automator is the operational layer behind your consultation process. The client experience stays simple while your team gets control over approvals and exceptions.</p>
+        </div>
+      </section>
+
+      <section className="section-tight section-workflow-download workflow-download-workflow-page">
+        <div className="container">
+          <WorkflowDownload variant="banner" />
         </div>
       </section>
 
