@@ -1606,3 +1606,60 @@ html[data-theme="dark"] .booking-side { background:#0b1220; color:#fff; border-c
 html[data-theme="dark"] .booking-side::after { opacity:1; }
 html[data-theme="dark"] .booking-side h1,html[data-theme="dark"] .booking-side h2,html[data-theme="dark"] .booking-side h3,html[data-theme="dark"] .booking-side strong { color:#f8fafc; }
 html[data-theme="dark"] .booking-side p,html[data-theme="dark"] .booking-side small { color:#9aabc1; }
+
+
+/* Final accessibility pass — light-mode content must remain readable.
+   Dark mode stays the default, while an explicit light choice remains fully supported. */
+.booking-side .booking-point {
+  color: #334155 !important;
+}
+.booking-side .booking-subtitle {
+  color: #2563eb;
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: 600;
+}
+.booking-side .booking-note {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #dbe4ef;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+html[data-theme="dark"] .booking-side .booking-point {
+  color: #dbeafe !important;
+}
+html[data-theme="dark"] .booking-side .booking-subtitle {
+  color: #93c5fd;
+}
+html[data-theme="dark"] .booking-side .booking-note {
+  border-top-color: rgba(255,255,255,.1);
+  color: #94a3b8;
+}
+
+/* Keep the remaining light-theme secondary text at a strong, readable contrast. */
+html:not([data-theme="dark"]) .muted { color: #64748b; }
+html:not([data-theme="dark"]) .booking-side p { color: #475569; }
+html:not([data-theme="dark"]) .booking-side small { color: #475569; }
+html:not([data-theme="dark"]) .hero-copy p,
+html:not([data-theme="dark"]) .hero-note,
+html:not([data-theme="dark"]) .section-head p,
+html:not([data-theme="dark"]) .page-hero p,
+html:not([data-theme="dark"]) .demo-copy > p,
+html:not([data-theme="dark"]) .pricing-intro-row > p {
+  color: #475569;
+}
+html:not([data-theme="dark"]) .feature-card p,
+html:not([data-theme="dark"]) .price-card p,
+html:not([data-theme="dark"]) .stat span,
+html:not([data-theme="dark"]) .service-row span:not(.service-check),
+html:not([data-theme="dark"]) .price-note span,
+html:not([data-theme="dark"]) .demo-points div {
+  color: #475569;
+}
+html:not([data-theme="dark"]) .nav a { color: #334155; }
+html:not([data-theme="dark"]) .nav a:hover { color: #0f172a; }
+
+/* New theme preference key intentionally prevents an old light-mode choice
+   from overriding the new dark-by-default experience on first load. */

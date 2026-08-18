@@ -370,7 +370,7 @@ export function BookingSide() {
     <aside className="booking-side">
       <div className="booking-brand">
         <Image src="/logos/logo-mark.png" alt="" width={80} height={80} />
-        <div><strong>Meeting Automator</strong><div style={{ color: "#93c5fd", fontSize: 12, marginTop: 4 }}>One-to-one consultation</div></div>
+        <div><strong>Meeting Automator</strong><div className="booking-subtitle">One-to-one consultation</div></div>
       </div>
       <p>Bring us the process you have today. We’ll look at where prospects get stuck, where your team spends time, and what should happen automatically after a meeting is requested.</p>
       <div className="booking-points">
@@ -379,7 +379,7 @@ export function BookingSide() {
         <div className="booking-point"><span className="point-dot" />Integrate into your website or build a new consultation site</div>
         <div className="booking-point"><span className="point-dot" />Clear implementation path and engagement scope</div>
       </div>
-      <div style={{ marginTop: 28, paddingTop: 20, borderTop: "1px solid rgba(255,255,255,.1)", color: "#94a3b8", fontSize: 12, lineHeight: 1.6 }}>
+      <div className="booking-note">
         Your booking is a guest request. No account or login is required.
       </div>
     </aside>

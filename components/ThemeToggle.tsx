@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 type Theme = "light" | "dark";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
-    const stored = window.localStorage.getItem("meetingautomator-theme") as Theme | null;
-    const preferred = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const stored = window.localStorage.getItem("meetingautomator-theme-v2") as Theme | null;
+    const preferred: Theme = stored === "light" || stored === "dark" ? stored : "dark";
     setTheme(preferred);
     document.documentElement.dataset.theme = preferred;
   }, []);
@@ -18,7 +18,7 @@ export function ThemeToggle() {
     const next = theme === "light" ? "dark" : "light";
     setTheme(next);
     document.documentElement.dataset.theme = next;
-    window.localStorage.setItem("meetingautomator-theme", next);
+    window.localStorage.setItem("meetingautomator-theme-v2", next);
   };
 
   return (

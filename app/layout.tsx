@@ -16,10 +16,9 @@ export const metadata: Metadata = {
 
 const themeScript = `(() => {
   try {
-    const saved = localStorage.getItem('meetingautomator-theme');
-    const theme =
-      saved ||
-      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const saved = localStorage.getItem('meetingautomator-theme-v2');
+    // Night mode is the product default. Respect an explicit user choice afterward.
+    const theme = saved === 'light' || saved === 'dark' ? saved : 'dark';
 
     document.documentElement.dataset.theme = theme;
   } catch {}
