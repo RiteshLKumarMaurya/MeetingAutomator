@@ -2,9 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { ThemeToggle } from "@/components/ThemeToggle";
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const active = (href: string) => href === "/" ? pathname === "/" : pathname?.startsWith(href);
   return (
     <header className="site-header">
       <div className="container header-inner">
@@ -13,7 +16,7 @@ export function SiteHeader() {
           <Image className="brand-logo brand-logo-dark" src="/logos/logo-header-dark.png" alt="Meeting Automator" width={170} height={56} priority />
         </Link>
         <nav className="nav" aria-label="Main navigation">
-          <Link href="/">Home</Link><Link href="/pricing">Solutions</Link><Link href="/workflow">How it works</Link><Link href="/consultation">Book a 1:1</Link>
+          <Link className={active("/") ? "active" : ""} aria-current={active("/") ? "page" : undefined} href="/">Home</Link><Link className={active("/pricing") ? "active" : ""} aria-current={active("/pricing") ? "page" : undefined} href="/pricing">Solutions</Link><Link className={active("/workflow") ? "active" : ""} aria-current={active("/workflow") ? "page" : undefined} href="/workflow">How it works</Link><Link className={active("/consultation") ? "active" : ""} aria-current={active("/consultation") ? "page" : undefined} href="/consultation">Book a 1:1</Link>
         </nav>
         <div className="header-actions">
           <ThemeToggle />
